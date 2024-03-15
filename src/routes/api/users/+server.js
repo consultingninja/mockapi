@@ -10,7 +10,9 @@ const users = [
 
 
 export const GET = async ({}) =>{
-  return  new Response(JSON.stringify(users),{status: 200});
+  const appReply = new Response(JSON.stringify(users), { status: 200 });
+  appReply.headers.set('Access-Control-Allow-Origin', '*');
+  return appReply;
 }
 
 
