@@ -6,7 +6,8 @@ export const POST = async ({request}) =>{
     const data = await request.json();
     const {phoneNumber} = data;
     const allowedNumbers = ['6129869576','5125491883'];
-    if(!allowedNumbers.includes(phoneNumber)){
+
+    if(!allowedNumbers.includes(phoneNumber.toString())){
       return new Response(JSON.stringify({error:'Not Authorized User!'}), { status: 403 });
     }
     //generate 5 random numbers using random bytes
