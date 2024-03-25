@@ -2,8 +2,8 @@ import crypto from 'crypto';
 
 
 
-export const POST = async ({response}) =>{
-    const data = await response.json();
+export const POST = async ({request}) =>{
+    const data = await request.json();
     const {phoneNumber} = data;
     const allowedNumbers = ['6129869576','5125491883'];
 
